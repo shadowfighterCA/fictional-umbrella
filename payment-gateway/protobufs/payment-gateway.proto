@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+enum ResponseType{
+    WronCardNumber = 0;
+    WrongExpiry = 1;
+    WrongName = 2;
+    WrongCVV = 3;
+    InsufficientBalance = 4;
+    SuccessfulTransaction = 5;
+
+}
+
+message TransactionResponse{
+    repeated ResponseType response =1;
+    repeated int32 RemainingBalance = 2;
+
+}
+
+message CardDetails{
+    string CardNumber = 1;
+    int32 ExpiryMonth = 2;
+    int32 ExpiryYear = 3;
+    string NameOnCard = 4;
+    int32 CVV = 5;
+    bool OnlineTransactionsEnabled = 6;
+    string StaticTransactionPassword = 7;
+
+}
+
+
+service Transaction {
+    rpc Transact(CardDetails) returns (TransactionResponse);
+
+}
