@@ -16,7 +16,7 @@ class TransactionStub(object):
         """
         self.Transact = channel.unary_unary(
                 '/Transaction/Transact',
-                request_serializer=payment__gateway__pb2.CardDetails.SerializeToString,
+                request_serializer=payment__gateway__pb2.TransactionRequest.SerializeToString,
                 response_deserializer=payment__gateway__pb2.TransactionResponse.FromString,
                 )
 
@@ -35,7 +35,7 @@ def add_TransactionServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Transact': grpc.unary_unary_rpc_method_handler(
                     servicer.Transact,
-                    request_deserializer=payment__gateway__pb2.CardDetails.FromString,
+                    request_deserializer=payment__gateway__pb2.TransactionRequest.FromString,
                     response_serializer=payment__gateway__pb2.TransactionResponse.SerializeToString,
             ),
     }
@@ -60,7 +60,7 @@ class Transaction(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/Transaction/Transact',
-            payment__gateway__pb2.CardDetails.SerializeToString,
+            payment__gateway__pb2.TransactionRequest.SerializeToString,
             payment__gateway__pb2.TransactionResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

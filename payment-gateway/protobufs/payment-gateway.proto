@@ -6,13 +6,20 @@ enum ResponseType{
     WrongName = 2;
     WrongCVV = 3;
     InsufficientBalance = 4;
-    SuccessfulTransaction = 5;
+    OnlineTransactionsNotEnabled= 5;
+    SuccessfulTransaction = 6;
 
 }
 
 message TransactionResponse{
     repeated ResponseType response =1;
     repeated int32 RemainingBalance = 2;
+
+}
+
+message TransactionRequest{
+    repeated CardDetails card = 1;
+    repeated int32 amount = 2;
 
 }
 
@@ -24,11 +31,12 @@ message CardDetails{
     int32 CVV = 5;
     bool OnlineTransactionsEnabled = 6;
     string StaticTransactionPassword = 7;
+    int32 BankBalance = 8;
 
 }
 
 
 service Transaction {
-    rpc Transact(CardDetails) returns (TransactionResponse);
+    rpc Transact(TransactionRequest) returns (TransactionResponse);
 
 }

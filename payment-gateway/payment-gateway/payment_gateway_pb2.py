@@ -13,19 +13,21 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15payment-gateway.proto\"P\n\x13TransactionResponse\x12\x1f\n\x08response\x18\x01 \x03(\x0e\x32\r.ResponseType\x12\x18\n\x10RemainingBalance\x18\x02 \x03(\x05\"\xb1\x01\n\x0b\x43\x61rdDetails\x12\x12\n\nCardNumber\x18\x01 \x01(\t\x12\x13\n\x0b\x45xpiryMonth\x18\x02 \x01(\x05\x12\x12\n\nExpiryYear\x18\x03 \x01(\x05\x12\x12\n\nNameOnCard\x18\x04 \x01(\t\x12\x0b\n\x03\x43VV\x18\x05 \x01(\x05\x12!\n\x19OnlineTransactionsEnabled\x18\x06 \x01(\x08\x12!\n\x19StaticTransactionPassword\x18\x07 \x01(\t*\x84\x01\n\x0cResponseType\x12\x12\n\x0eWronCardNumber\x10\x00\x12\x0f\n\x0bWrongExpiry\x10\x01\x12\r\n\tWrongName\x10\x02\x12\x0c\n\x08WrongCVV\x10\x03\x12\x17\n\x13InsufficientBalance\x10\x04\x12\x19\n\x15SuccessfulTransaction\x10\x05\x32=\n\x0bTransaction\x12.\n\x08Transact\x12\x0c.CardDetails\x1a\x14.TransactionResponseb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x15payment-gateway.proto\"P\n\x13TransactionResponse\x12\x1f\n\x08response\x18\x01 \x03(\x0e\x32\r.ResponseType\x12\x18\n\x10RemainingBalance\x18\x02 \x03(\x05\"@\n\x12TransactionRequest\x12\x1a\n\x04\x63\x61rd\x18\x01 \x03(\x0b\x32\x0c.CardDetails\x12\x0e\n\x06\x61mount\x18\x02 \x03(\x05\"\xc6\x01\n\x0b\x43\x61rdDetails\x12\x12\n\nCardNumber\x18\x01 \x01(\t\x12\x13\n\x0b\x45xpiryMonth\x18\x02 \x01(\x05\x12\x12\n\nExpiryYear\x18\x03 \x01(\x05\x12\x12\n\nNameOnCard\x18\x04 \x01(\t\x12\x0b\n\x03\x43VV\x18\x05 \x01(\x05\x12!\n\x19OnlineTransactionsEnabled\x18\x06 \x01(\x08\x12!\n\x19StaticTransactionPassword\x18\x07 \x01(\t\x12\x13\n\x0b\x42\x61nkBalance\x18\x08 \x01(\x05*\xa6\x01\n\x0cResponseType\x12\x12\n\x0eWronCardNumber\x10\x00\x12\x0f\n\x0bWrongExpiry\x10\x01\x12\r\n\tWrongName\x10\x02\x12\x0c\n\x08WrongCVV\x10\x03\x12\x17\n\x13InsufficientBalance\x10\x04\x12 \n\x1cOnlineTransactionsNotEnabled\x10\x05\x12\x19\n\x15SuccessfulTransaction\x10\x06\x32\x44\n\x0bTransaction\x12\x35\n\x08Transact\x12\x13.TransactionRequest\x1a\x14.TransactionResponseb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'payment_gateway_pb2', globals())
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
-  _RESPONSETYPE._serialized_start=288
-  _RESPONSETYPE._serialized_end=420
+  _RESPONSETYPE._serialized_start=375
+  _RESPONSETYPE._serialized_end=541
   _TRANSACTIONRESPONSE._serialized_start=25
   _TRANSACTIONRESPONSE._serialized_end=105
-  _CARDDETAILS._serialized_start=108
-  _CARDDETAILS._serialized_end=285
-  _TRANSACTION._serialized_start=422
-  _TRANSACTION._serialized_end=483
+  _TRANSACTIONREQUEST._serialized_start=107
+  _TRANSACTIONREQUEST._serialized_end=171
+  _CARDDETAILS._serialized_start=174
+  _CARDDETAILS._serialized_end=372
+  _TRANSACTION._serialized_start=543
+  _TRANSACTION._serialized_end=611
 # @@protoc_insertion_point(module_scope)
